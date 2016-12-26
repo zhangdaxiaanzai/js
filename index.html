@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="http://static.ydcss.com/libs/jquery/1.11.2/jquery.js"></script>
+	<script src="js/bankData.js"></script>
+	<script src="js/luhmCheck.js"></script>
+	<title>JS操作例子</title>
+</head>
+<body>
+ <div>
+	<span>银行账号：<input type="text" id="conunt"/></span>
+	<input type="button" id="btnCheck" value="验证" onclick="checks.CheckBankNo();" />
+	<span id="banknoInfo"></span>
+ </div>
+ <div>
+ 	<span>开户行:<span id="bankName" style="color:red;"></span></span>
+ </div>
+</body>
+	<script type="text/javascript">
+		document.getElementById("conunt").onkeyup = function(){
+			var v=this.value;
+				
+			 	if(/\S{5}/.test(v)){//每隔4个字符空格
+      			this.value = v.replace(/\s/g, '').replace(/(.{4})/g, "$1 ");
+    			}
+
+		}
+
+		
+
+
+	</script>
+
+		
+</html>
